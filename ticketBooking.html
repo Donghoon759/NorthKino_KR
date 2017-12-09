@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+
+<head>
+	<style>
+	#head {
+		width : 100%;
+		height : 20%;
+	}
+
+	.letter {
+		color : white;
+		text-align : center;
+	}
+
+	#sidebar {
+		width : 100%;
+		height : 100px;
+		background-color : white;
+
+	}
+
+	#button {
+		width : 50%;
+		height : 100px;
+		float : left;
+		text-align : center;
+		display : inline-block;
+		border : 3px red solid;
+		box-sizing : border-box;
+        color : black;
+	}
+
+	#contents {
+		width : 100%;
+		height : auto;
+	}
+
+	img {
+		width : 400px;
+		height : 500px;
+		margin : 50px;
+		display : inline-block;
+	}
+
+	#carousel-inner {
+		height : 900px;
+	}
+
+    body {
+        color : white;
+    }
+
+</style>
+</head>
+
+
+<body style = "background-color:black;">
+	<div id="head">
+		<h1 class="letter">North Kino</h1>
+	</div>
+
+	<div id="sidebar">
+		<div id="button">Now Showing</div>
+		<div id="button">Coming Soon</div>
+	</div>
+
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ticket Booking</h1>
+
+    <form action="a.php" method="post">
+        <label class="name" for="mname">Movie name</label>
+        <select id="name">
+            <option value="m1">movie1</option>
+            <option value="m2">movie2</option>
+            <option value="m3">movie3</option>
+            <option value="m4">movie4</option>
+            <option value="m5">movie5</option>
+        </select>
+
+        <label class="theater" for="tname">Theater</label>
+            <select id="tname">
+                <option value="t1">Helsinki</option>
+                <option value="t2">Turku</option>
+                <option value="t3">Tampere</option>
+                <option value="t4">Oulu</option>
+                <option value="t5">Rovaniemi</option>
+            </select>
+
+            <label class="dates" for="date">Date</label>
+            <select id="date">
+                <option value="d1">06.12.17</option>
+                <option value="d2">07.12.17</option>
+                <option value="d3">08.12.17</option>
+                <option value="d4">09.12.17</option>
+                <option value="d5">10.12.17</option>
+            </select>
+
+            <label class="rooms" for="room">Room</label>
+            <select id="room">
+                <option value="r1">06.12.17</option>
+                <option value="r2">07.12.17</option>
+                <option value="r3">08.12.17</option>
+                <option value="r4">09.12.17</option>
+                <option value="r5">10.12.17</option>
+            </select>
+
+            <label class="times" for="time">Time</label>
+            <select id="time">
+                <option value="d1">07:40</option>
+                <option value="d2">10:10</option>
+                <option value="d3">12:35</option>
+                <option value="d4">15:00</option>
+                <option value="d5">17:30</option>
+                <option value="d6">20:10</option>
+            </select>
+
+            <input type="submit" value="Payment">
+        </form>
+
+
+
+
+        </body>
+        </html>
