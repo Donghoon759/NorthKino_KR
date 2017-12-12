@@ -2,49 +2,100 @@
 
 
 <head>
-	<style>
-	#head {
-		width : 100%;
-		height : 20%;
-	}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css"/>
 
-	.letter {
-		color : white;
-		text-align : center;
-	}
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <!-- <script src="script.js"></script> -->
 
-	#sidebar {
-		width : 100%;
-		height : 100px;
-		background-color : white;
 
-	}
+    <script>
 
-	#button {
-		width : 50%;
-		height : 100px;
-		float : left;
-		text-align : center;
-		display : inline-block;
-		border : 3px red solid;
-		box-sizing : border-box;
-	}
+        jQuery(document).ready(function ($) {
+            $("div.carousel-inner div.item div.fix").mouseover(function (event) {
+                $(this).find('button').removeClass('hover');
+            })
+            .mouseout(function (event) {
+                $(this).find('button').addClass('hover');
+            });
+            ;
 
-	#contents {
-		width : 100%;
-		height : auto;
-	}
+                // $("button.bookNow").on('click', function (event) {
+                //     event.preventDefault();
+                //     var movies = $(".movies option:selected").text();
+                //     var cinemas = $(".cinemas option:selected").text();
+                //     var date = $(".date option:selected").text();
+                //     var time = $(".time option:selected").text();
 
-	img {
-		width : 400px;
-		height : 500px;
-		margin : 50px;
-		display : inline-block;
-	}
+                //     $("div.myModal2 div.modal-content .tenphim span").text(movies);
+                //     $("div.myModal2 div.modal-content .rap span").text(cinemas);
+                //     $("div.myModal2 div.modal-content .ngay span").text(date);
+                //     $("div.myModal2 div.modal-content .suat span").text(time);
+                // });
+            });
+        
+        
+        </script>
 
-	#carousel-inner {
-		height : 900px;
-	}
+        <style>
+        #head {
+          width : 100%;
+          height : 20%;
+      }
+
+      .letter {
+          color : white;
+          text-align : center;
+          font-size : 64px;
+      }
+
+      #sidebar {
+          width : 100%;
+          height : 100px;
+          background-color : white;
+
+      }
+
+      #button {
+          width : 50%;
+          height : 100px;
+          float : left;
+          text-align : center;
+          display : inline-block;
+          border : 3px red solid;
+          box-sizing : border-box;
+      }
+
+      #contents {
+          width : 100%;
+          height : auto;
+      }
+
+      img {
+          width : 400px;
+          height : 500px;
+          margin : 50px;
+          display : inline-block;
+      }
+
+      #carousel-inner {
+          height : 900px;
+      }
+
+      #backbutton {
+        width : 100px;
+        height : 100px;
+    }
+    #tab{
+        margin-top : 50px;
+    }
 
 </style>
 </head>
@@ -52,86 +103,93 @@
 
 <body style = "background-color:black;">
 	<div id="head">
-		<h1 class="letter">North Kino</h1>
-	</div>
+        <h1 class="letter">North Kino</h1>
+    </div>
 
-	<div id="sidebar">
-		<div id="button">Now Showing</div>
-		<div id="button">Coming Soon</div>
-	</div>
+    <div id="sidebar">
+      <div id="button"><font size="32">Now Showing</font></div>
+      <div id="button"><font size="32">Coming Soon</font></div>
+  </div>
 
-	 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="isShowing">
-                        <div class="col-xs-12">                         
-                            <div class="well">
-                                <div id="myCarousel" class="carousel slide">
+  <div class="tab-content" id="tab">
+    <div role="tabpanel" class="tab-pane fade in active" id="isShowing">
+        <div class="col-xs-12">                         
+            <div class="well">
+                <div id="myCarousel" class="carousel slide">
 
-                                    <!-- Carousel items -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <div class="row">
-                                                <div class="col-xs-3 fix"><a href="#x">
-                                                        <img src="pic/now1.jpg" alt="Image" class="img-responsive">
-                                                        <button class="btn btn-primary hover">Trailer</button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-xs-3 fix"><a href="#x"><img src="pic/now2.jpg" alt="Image" class="img-responsive">
-                                                        <button class="btn btn-primary hover">Trailer</button>
-
-                                                    </a>
-                                                </div>
-                                                <div class="col-xs-3 fix"><a href="#x"><img src="pic/now3.jpg" alt="Image" class="img-responsive">
-                                                        <button class="btn btn-primary hover">Trailer</button>
-
-                                                    </a>
-                                                </div>
-                                                <div class="col-xs-3 fix"><a href="#x"><img src="pic/now4.jpg" alt="Image" class="img-responsive">
-                                                        <button class="btn btn-primary hover">Trailer</button>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!--/row-->
-                                        </div>
-                                        <!--/item-->
-                                        <div class="item">
-                                            <div class="row">
-                                                <div class="col-xs-3 fix"><a href="#x" class="thumbnail"><img src="pic/now5.jpg" alt="Image" class="img-responsive">
-                                                        <button class="btn btn-primary hover">Trailer</button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-xs-3 fix"><a href="#x" class="thumbnail"><img src="pic/now6.jpg" alt="Image" class="img-responsive">
-                                                        <button class="btn btn-primary hover">Trailer</button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-xs-3 fix"><a href="#x" class="thumbnail"><img src="pic/now7.jpg" alt="Image" class="img-responsive">
-                                                        <button class="btn btn-primary hover">Trailer</button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-xs-3 fix"><a href="#x" class="thumbnail"><img src="pic/now8.jpg" alt="Image" class="img-responsive">
-                                                        <button class="btn btn-primary hover">Trailer</button>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!--/row-->
-                                        </div>
-
-                                        <!--/item-->
-                                    </div>
-                                    <!--/carousel-inner--> <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span></a>
-                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-
-                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span></a>
-                                    </a>
-                                </div>
-                                <!--/myCarousel-->
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-xs-3 fix"><a href="#x">
+                                    <img src="./img/now1.jpg" alt="Image" class="img-responsive">
+                                    <button class="btn btn-primary hover" id="bt1">Info</button>
+                                    <button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+                                </a>
                             </div>
-                            <!--/well-->
+                            <div class="col-xs-3 fix"><a href="#x"><img src="./img/now2.jpg" alt="Image" class="img-responsive">
+                                <button class="btn btn-primary hover" id="bt1">Info</button>
+                                <button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+
+                            </a>
                         </div>
+                        <div class="col-xs-3 fix"><a href="#x"><img src="./img/now3.jpg" alt="Image" class="img-responsive">
+                            <button class="btn btn-primary hover" id="bt1">Info</button>
+                            <button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+
+                        </a>
                     </div>
-		
+                    <div class="col-xs-3 fix"><a href="#x"><img src="./img/now4.jpg" alt="Image" class="img-responsive">
+                     <button class="btn btn-primary hover" id="bt1">Info</button>
+                     <button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+                 </a>
+             </div>
+         </div>
+         <!--/row-->
+     </div>
+     <!--/item-->
+     <div class="item">
+        <div class="row">
+            <div class="col-xs-3 fix"><a href="#x" class="thumbnail"><img src="./img/now5.jpg" alt="Image" class="img-responsive">
+                <button class="btn btn-primary hover" id="bt1">Info</button>
+                <button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+            </a>
+        </div>
+        <div class="col-xs-3 fix"><a href="#x" class="thumbnail"><img src="./img/now6.jpg" alt="Image" class="img-responsive">
+            <button class="btn btn-primary hover" id="bt1">Info</button>
+            <button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+        </a>
+    </div>
+    <div class="col-xs-3 fix"><a href="#x" class="thumbnail"><img src="./img/1-3.jpg" alt="Image" class="img-responsive">
+        <button class="btn btn-primary hover" id="bt1">Info</button>
+        <button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+    </a>
+</div>
+<div class="col-xs-3 fix"><a href="#x" class="thumbnail"><img src="./img/1-4.jpg" alt="Image" class="img-responsive">
+    <button class="btn btn-primary hover" id="bt1">Info</button>
+    <button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+</a>
+</div>
+</div>
+<!--/row-->
+</div>
+
+<!--/item-->
+</div>
+<!--/carousel-inner--> <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span></a>
+    </a>
+</div>
+<!--/myCarousel-->
+</div>
+<!--/well-->
+</div>
+</div>
 
 
 </body>

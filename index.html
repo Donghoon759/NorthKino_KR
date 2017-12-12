@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
 <head>
 	<style>
 	body {
@@ -18,7 +9,7 @@
 	}
 
 	#wrapper {
-		width : 1400px;
+		width : 75%;
 		height : 400px;
 		background-color : black;
 		margin : 250px auto 0;
@@ -33,14 +24,20 @@
 		float : right;
 	}
 
+	#backbutton {
+
+	}
+
 </style>
 
 </head>
 
 <body>
-	<div id="wrapper"></div>
-	<img src="./img/movie.png" id="movie" width="200" height="200">
-	<img src="./img/ticket.png" id="ticket" width="200" height="200">
+	<div id="wrapper">
+		<div id="backbutton" src="./img/backbutton.png"></div>
+	</div>
+	<a href="./nowShowing.html"><img src="./img/movie.png" id="movie" width="200" height="200">
+	<a href="./ticketBooking.html"><img src="./img/ticket.png" id="ticket" width="200" height="200">
 
 
 

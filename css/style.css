@@ -1,0 +1,17 @@
+div.tab-content div.carousel-inner div.item button{
+	position : absolute;
+	bottom:60px;
+	/*left:40%;*/
+}
+
+#bt1 {
+	left : 35%;
+}
+
+#bt2 {
+	right : 20%;
+}
+
+button.hover {
+	display : none;
+}
