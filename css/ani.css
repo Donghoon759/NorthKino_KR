@@ -124,7 +124,7 @@ section {
 }
 
 .hamburger {
-  position: absolute;
+  /*position: absolute;*/
   margin: 50px;
   z-index: 2;
   cursor: pointer;
