@@ -12,7 +12,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/ani.css">
-	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 	<script src="script.js"></script>
 
 	<script>
@@ -61,16 +60,60 @@
 </head>
 
 <body>
+<!-- All the modals -->
+
+ <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some textssss in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
 	<div class="hamburger">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-</div>
-<div class="menu">
-  <div class="menu-item">Home</div>
-  <div class="menu-item">About</div>
-  <div class="menu-item">Contact</div>
-</div>
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
+	<div class="menu">
+		<div class="menu-item">Home</div>
+		<div class="menu-item">About</div>
+		<div class="menu-item">Contact</div>
+	</div>
 	<div id="wrapper">
 		<div class="tab-content" id="tab" style="background-color: black;" >
 			<div role="tabpanel" class="tab-pane fade in active" id="isShowing" >
@@ -84,8 +127,8 @@
 									<div class="row">
 										<div class="col-xs-3 fix"><a href="#x">
 											<img src="./img/now1.jpg" alt="Image" class="img-responsive hvr-grow">
-											<button class="btn btn-primary hover" id="bt1">Info</button>
-											<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+											<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal1" id="bt1">Info</button>
+											<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal2" id="bt2">Buy Ticket</button>
 										</a>
 									</div>
 									<div class="col-xs-3 fix"><a href="#x"><img src="./img/now2.jpg" alt="Image" class="img-responsive hvr-grow">
@@ -156,7 +199,40 @@
 <a href="./nowShowing.html"><img src="./img/movie.png" id="movie" width="200" height="200" class="hvr-float">
 	<a href="./ticketBooking.html"><img src="./img/ticket.png" id="ticket" width="200" height="200" class="hvr-float">
 
+<script>
 
+	        // Get the modal
+        var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("bt1");
+
+var cn = document.getElementById("cnbtn");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+cn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+</script>
 
 	</body>
 
