@@ -128,6 +128,8 @@ section {
   margin: 50px;
   z-index: 2;
   cursor: pointer;
+    display : inline;
+    float : left;
 }
 
 .line {

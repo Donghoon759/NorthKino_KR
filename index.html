@@ -13,6 +13,7 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/ani.css">
 	<script src="script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
 	<script>
 
@@ -26,231 +27,495 @@
 			;
 
 
-		 $("input.bookNow").on('click', function (event) {
-                    event.preventDefault();
-                    var re=0;
-                    var ch=0;
-                    var wh=0;
-                    var sum=0;
-                    var movie = $(".mnames option:selected").text();
-                    var theater = $(".theaters option:selected").text();
-                    var date = $(".dates option:selected").text();
-                    var room = $(".rooms option:selected").text();
-                    var time = $(".times option:selected").text();
-                    var regular = $(".regulars option:selected").text();
-                    var child = $(".childs option:selected").text();
-                    var wheelchair = $(".wheelchairs option:selected").text();
-                    re = regular;
-                    ch = child;
-                    wh = wheelchair;
-                    sum = re*12.50 + ch*10 + wh*10;
+			$("input.bookNow").on('click', function (event) {
+				event.preventDefault();
+				var re=0;
+				var ch=0;
+				var wh=0;
+				var sum=0;
+				var movie = $(".mnames option:selected").text();
+				var theater = $(".theaters option:selected").text();
+				var date = $(".dates option:selected").text();
+				var room = $(".rooms option:selected").text();
+				var time = $(".times option:selected").text();
+				var regular = $(".regulars option:selected").text();
+				var child = $(".childs option:selected").text();
+				var wheelchair = $(".wheelchairs option:selected").text();
+				re = regular;
+				ch = child;
+				wh = wheelchair;
+				sum = re*12.50 + ch*10 + wh*10;
 
 
 
-                    $("div.Payment div.modal-content .1 span").text(movie);
-                    $("div.Payment div.modal-content .2 span").text(theater);
-                    $("div.Payment div.modal-content .3 span").text(date);
-                    $("div.Payment div.modal-content .4 span").text(room);
-                    $("div.Payment div.modal-content .5 span").text(time);
-                    $("div.Payment div.modal-content .6 span").text(regular);
-                    $("div.Payment div.modal-content .7 span").text(child);
-                    $("div.Payment div.modal-content .8 span").text(wheelchair);
-                    $("div.Payment div.modal-content .9 span").text(sum);
-                });
-            });
+				$("div.Payment div.modal-content .1 span").text(movie);
+				$("div.Payment div.modal-content .2 span").text(theater);
+				$("div.Payment div.modal-content .3 span").text(date);
+				$("div.Payment div.modal-content .4 span").text(room);
+				$("div.Payment div.modal-content .5 span").text(time);
+				$("div.Payment div.modal-content .6 span").text(regular);
+				$("div.Payment div.modal-content .7 span").text(child);
+				$("div.Payment div.modal-content .8 span").text(wheelchair);
+				$("div.Payment div.modal-content .9 span").text(sum);
+			});
+		});
+
+		window.onload = function() {
+
+                TweenLite.to(document.getElementById("kino"), // element
+                               10,   // duration
+                                {   // tween parameters
+                                	scale : 0.5
+
+                                }); 
+                 TweenLite.to(document.getElementById("kino"), // element
+                               10,   // duration
+                                {   // tween parameters
+                                	delay : 10,
+                                	scale : 1
+
+                                });
+            }
 
 
-	</script>
+        </script>
 
-	<style>
-	body {
-		background-image: url("./img/curtain.png");
-<<<<<<< HEAD
-		background-size : 100% 100%;
-=======
-		background-size : 100%;
->>>>>>> 6df51f08f35748c1efc2f143b604f13a3687326b
-		background-repeat: no-repeat;
-	}
+        <style>
 
-	#posters{
-		width: 50px;
-		height: 100px;
-		margin: 50px;
+        #logo
+        {
+        	position: fixed;
+        	top: 50%;
+        	left: 50%;                
+        	transform: translate(-50%, -50%) scale(2,2);
+        }
+        body {
+        	background-image: url("./img/curtain.png");
+        	background-size : 100% 100%;
+        	background-repeat: no-repeat;
+        }
 
-	}
+        #posters{
+        	width: 50px;
+        	height: 100px;
+        	margin: 50px;
 
-	#navi {
-		height : 250px;
-		width : 100%;
-	}
+        }
 
-	#wrapper {
-		width : 75%;
-		height : 400px;
-		margin : 200px auto 0;
-	}
-	
-	#movie {
-		margin : 20px 0 50px 50px;
-	}
+        #navi {
+        	height : 250px;
+        	width : 100%;
+        }
 
-	#ticket {
-		margin : 20px 50px 50px 0;
-		float : right;
-	}
+        #wrapper {
+        	width : 75%;
+        	height : 400px;
+        	margin : 0 auto 0;
+        }
 
-	#backbutton {
+        #movie {
+        	margin : 20px 0 50px 50px;
+        }
 
-	}
+        #ticket {
+        	margin : 20px 50px 50px 0;
+        	float : right;
+        }
 
-	#button {
-		width : 50%;
-		height : 100px;
-		float : left;
-		text-align : center;
-		display : inline-block;
-		border : 3px red solid;
-		box-sizing : border-box;
-		background-color : black;
-		text-decoration-color: white;
-	}
+        #backbutton {
 
-	#timetable{
+        }
+
+        #button {
+        	width : 50%;
+        	height : 100px;
+        	float : left;
+        	text-align : center;
+        	display : inline-block;
+        	border : 3px red solid;
+        	box-sizing : border-box;
+        	background-color : black;
+        	text-decoration-color: white;
+        }
+
+        .timetable{
+        	width : 150px;
+        	height : 50px;
 
 
-	}
+        }
 
-	.img-responsive {
-		width : 317px;
-		height : 469px;
-	}
+        .img-responsive {
+        	width : 317px;
+        	height : 469px;
+        }
 
-	select{
-		margin-left : 10px;
-	}
+        select{
+        	margin-left : 10px;
+        }
 
-	label {
-		margin-left : 10px;
-	}
+        label {
+        	margin-left : 10px;
+        }
 
-	#bookimg {
-		width:400px;
-		height:550px;
-		display : inline-block;
-		float : left;
-	}
+        #bookimg {
+        	width:400px;
+        	height:550px;
+        	display : inline-block;
+        	float : left;
+        }
 
-	#pay{
-		margin : 0 auto;
-	}
+        #pay{
+        	margin : 0 auto;
+        }
 
-/*	.modal-content {
-		width : 800px;
-		}*/
+        .infoImg{
+        	width : 317px;
+        	height : 469px;
+        	float : left;
+        	margin-right : 30px;
+        	margin-top : 50px;
+        }
+
+        .table {
+        	width : 500px;
+        	height : 350px;
+        }
+
+        #northkino {
+        	width : 50%;
+        	height : 200px;
+        	margin : 0 auto;
+        	margin-top : 10px;
+        	background-color: black;
+        	border : 3px solid red;
+        }
+
+        #kino {
+        	font-family: "Paytone One";
+        	color: #202020;
+        	text-transform: uppercase;
+        	letter-spacing: -2px;
+        	text-align : center;
+        }
+
+        #kino span {
+        	/*  margin: 11px 0 17px 0;*/
+        	font-size: 100px;
+        	line-height: 80px;
+        	color: #f1ebe5;
+        	text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+        	letter-spacing: -4px;
+        	margin-top : 30px;
+        	transform: translate(-50%, -50%) scale(2,2);
+        }
+
+        .modal-content .modal-header {
+        	font-size : 35px;
+        }
+
+
 
 	</style>
 
 </head>
 
 <body>
-	<!-- <img src="./img/rightcurtain.png"> -->
-	<!-- All the modals -->
+	<div class="hamburger">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
+	<div class="menu">
+		<div class="menu-item">Home</div>
+		<div class="menu-item">Sign in</div>
+		<div class="menu-item">Sign up</div>
+		<div class="menu-item">My tickets</div>
+		<div class="menu-item">About</div>
+		<div class="menu-item">Contact</div>
+		<div class="menu-item">Language</div>
+	</div>
+	<div id="northkino">
+		<div id="kino">
+			<span>North  kino</span>
+		</div>
+	</div>
+	
 
-	<!-- Booking Modal -->
-	<div class="modal fade" id="Booking" role="dialog">
-		<div class="modal-dialog modal-lg">
+	<div id="wrapper">
+		<a href="#isShowing" aria-controls="isShowing" role="tab" data-toggle="tab" aria-expanded="false">
+			<div id="button">
+				<font size="32" color="white">Now Showing</font>
+			</div>
+		</a>
+		<a href="#isComing" aria-controls="isComing" role="tab" data-toggle="tab" aria-expanded="true">
+			<div id="button">
+				<font size="32" color="white">Coming Soon</font>
+			</div>
+		</a>
+		<div class="tab-content" id="tab">
 
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<label class="modaltitle" for="mname"><h1>Ticket Booking</h1></label>
+			<div role="tabpanel" class="tab-pane fade in active" id="isShowing" >
+				<div class="col-xs-12">                         
+					<div class="well" style="background-color: black;">
+						<div id="myCarousel" class="carousel slide" >
+
+							<!-- Carousel items -->
+							<div class="carousel-inner">
+								<div class="item active">
+									<div class="row">
+										<div class="col-xs-4 fix"><a href="#x">
+											<img src="./img/now1.jpg" alt="Image" class="img-responsive hvr-grow">
+											<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal1" id="bt1">Info</button>
+											<button class="btn btn-primary hover" data-toggle="modal" data-target="#Booking" id="bt2">Buy Ticket</button>
+										</a>
+									</div>
+									<div class="col-xs-4 fix"><a href="#x"><img src="./img/now2.jpg" alt="Image" class="img-responsive hvr-grow">
+										<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal2" id="bt1">Info</button>
+										<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+
+									</a>
+								</div>
+								<div class="col-xs-4 fix"><a href="#x"><img src="./img/now3.jpg" alt="Image" class="img-responsive hvr-grow">
+									<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal3" id="bt1">Info</button>
+									<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+
+								</a>
+							</div>
+								<!-- <div class="col-xs-3 fix"><a href="#x"><img src="./img/now4.jpg" alt="Image" class="img-responsive hvr-grow">
+									<button class="btn btn-primary hover" id="bt1">Info</button>
+									<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+								</a>
+							</div> -->
+						</div>
+						<!--/row-->
+					</div>
+					<!--/item-->
+					<div class="item">
+						<div class="row">
+							<div class="col-xs-4 fix"><a href="#x"><img src="./img/now4.jpg" alt="Image" class="img-responsive hvr-grow">
+								<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal4" id="bt1">Info</button>
+								<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+							</a>
+						</div>
+						<div class="col-xs-4 fix"><a href="#x"><img src="./img/now5.jpg" alt="Image" class="img-responsive hvr-grow">
+							<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal5" id="bt1">Info</button>
+							<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+						</a>
+					</div>
+					<div class="col-xs-4 fix"><a href="#x"><img src="./img/now6.jpg" alt="Image" class="img-responsive hvr-grow">
+						<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal6" id="bt1">Info</button>
+						<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+					</a>
 				</div>
-				<div class="modal-body">
-					<!-- <img src="./img/now1.jpg" id="bookimg"> -->
+		<!-- 		<div class="col-xs-3 fix"><a href="#x"><img src="./img/now8.jpg" alt="Image" class="img-responsive hvr-grow">
+					<button class="btn btn-primary hover" id="bt1">Info</button>
+					<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+				</a>
+			</div> -->
+		</div>
+		<!--/row-->
+	</div>
 
-					<!-- <form action="a.php" method="post"> -->
-						<label class="mmname" for="mname">Movie name</label>
-						<select id="mname" class="mnames">
-							<option value="m1">A Bad Moms Christmas</option>
-							<option value="m2">Breathe</option>
-							<option value="m3">Daddy's home2</option>
-							<option value="m4">God's own country</option>
-							<option value="m5">Jigsaw</option>
-							<option value="m6">Lady macbeth</option>
-						</select><br>
+	<!--/item-->
+</div>
+<!--/carousel-inner--> 
+<a class="left carousel-control" href="#myCarousel" data-slide="prev" style="width:50px;">
+	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	<span class="sr-only">Previous</span></a>
+	<a class="right carousel-control" href="#myCarousel" data-slide="next" style="width:50px;">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span></a>
+	</div>
+	<!--/myCarousel-->
+</div>
+<!--/well-->
+</div>
+</div>
 
-						<label class="mmtheater" for="tname">Theater</label>
-						<select id="tname" class="theaters">
-							<option value="t1">Helsinki</option>
-							<option value="t2">Turku</option>
-							<option value="t3">Tampere</option>
-							<option value="t4">Oulu</option>
-							<option value="t5">Rovaniemi</option>
-						</select><br>
 
-						<label class="mmdate" for="date">Date</label>
-						<select id="date" class="dates">
-							<option value="d1">18.12.17</option>
-							<option value="d2">19.12.17</option>
-							<option value="d3">20.12.17</option>
-							<option value="d4">21.12.17</option>
-							<option value="d5">22.12.17</option>
-						</select><br>
 
-						<label class="mmroom" for="room">Room</label>
-						<select id="room" class="rooms">
-							<option value="r1">Room1</option>
-							<option value="r2">Room2</option>
-							<option value="r3">Room3</option>
-							<option value="r4">Room4</option>
-							<option value="r5">Room5</option>
-						</select><br>
 
-						<label class="mmtime" for="time">Time</label>
-						<select id="time" class="times">
-							<option value="d1">07:40</option>
-							<option value="d2">10:10</option>
-							<option value="d3">12:35</option>
-							<option value="d4">15:00</option>
-							<option value="d5">17:30</option>
-							<option value="d6">20:10</option>
-						</select><br><br><br>
 
-						<h3>Ticket Type</h3><br>
+<div role="tabpanel" class="tab-pane fade in" id="isComing">
+	<div class="col-xs-12">                         
+		<div class="well" style="background-color: black;">
+			<div id="myCarouselb" class="carousel slide" >
 
-						<label class="mmregular" for="regular">Regular</label>
-						<select id="regular" class="regulars">
-							<option value="10">0</option>
-							<option value="11">1</option>
-							<option value="12">2</option>
-							<option value="13">3</option>
-							<option value="14">4</option>
-							<option value="15">5</option>
-						</select><br>
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="row">
+							<div class="col-xs-4 fix"><a href="#x">
+								<img src="./img/co1.jpg" alt="Image" class="img-responsive hvr-grow">
+								<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal7" id="bt1">Info</button>
+								<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal2" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+							</a>
+						</div>
+						<div class="col-xs-4 fix"><a href="#x"><img src="./img/co2.jpg" alt="Image" class="img-responsive hvr-grow">
+							<button class="btn btn-primary hover" id="bt1" data-toggle="modal" data-target="#myModal8">Info</button>
+							<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
 
-						<label class="mmchild" for="child">Child</label>
-						<select id="child" class="childs">
-							<option value="20">0</option>
-							<option value="21">1</option>
-							<option value="22">2</option>
-							<option value="23">3</option>
-							<option value="24">4</option>
-							<option value="25">5</option>
-						</select><br>
+						</a>
+					</div>
+					<div class="col-xs-4 fix"><a href="#x"><img src="./img/co3.jpg" alt="Image" class="img-responsive hvr-grow">
+						<button class="btn btn-primary hover" id="bt1" data-toggle="modal" data-target="#myModal9">Info</button>
+						<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
 
-						<label class="mmwheelchair" for="wheelchair">Wheelchair</label>
-						<select id="wheelchair" class="wheelchairs">
-							<option value="30">0</option>
-							<option value="31">1</option>
-							<option value="32">2</option>
-							<option value="33">3</option>
-							<option value="34">4</option>
-							<option value="35">5</option>
-						</select><br>
+					</a>
+				</div>
+				<!-- <div class="col-xs-3 fix"><a href="#x"><img src="./img/co4.jpg" alt="Image" class="img-responsive hvr-grow">
+					<button class="btn btn-primary hover" id="bt1">Info</button>
+					<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+				</a>
+			</div> -->
+		</div>
+		<!--/row-->
+	</div>
+	<!--/item-->
+	<div class="item">
+		<div class="row">
+			<div class="col-xs-4 fix"><a href="#x"><img src="./img/co4.jpg" alt="Image" class="img-responsive hvr-grow">
+				<button class="btn btn-primary hover" id="bt1" data-toggle="modal" data-target="#myModal10">Info</button>
+				<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+			</a>
+		</div>
+		<div class="col-xs-4 fix"><a href="#x"><img src="./img/co5.jpg" alt="Image" class="img-responsive hvr-grow">
+			<button class="btn btn-primary hover" id="bt1" data-toggle="modal" data-target="#myModal11">Info</button>
+			<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+		</a>
+	</div>
+	<div class="col-xs-4 fix"><a href="#x"><img src="./img/co6.jpg" alt="Image" class="img-responsive hvr-grow">
+		<button class="btn btn-primary hover" id="bt1" data-toggle="modal" data-target="#myModal12">Info</button>
+		<button class="btn btn-primary hover" id="bt2" data-toggle="modal" data-target="#Booking">Buy Ticket</button>
+	</a>
+</div>
+<!-- <div class="col-xs-3 fix"><a href="#x"><img src="./img/co8.jpg" alt="Image" class="img-responsive hvr-grow">
+	<button class="btn btn-primary hover" id="bt1">Info</button>
+	<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
+</a>
+</div> -->
+</div>
+<!--/row-->
+</div>
 
-						<input type="submit" value="Payment" id="pay" class="bookNow" data-toggle="modal" data-target=".Payment">
+<!--/item-->
+</div>
+<!--/carousel-inner--> 
+<a class="left carousel-control" href="#myCarouselb" data-slide="prev" style="width:50px;" >
+	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	<span class="sr-only">Previous</span></a>
+	<a class="right carousel-control" href="#myCarouselb" data-slide="next" style="width:50px;">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span></a>
+	</div>
+	<!--/myCarousel-->
+</div>
+<!--/well-->
+</div>
+</div>
+
+
+</div>
+</div>
+
+<img src="./img/movie.png" id="movie" width="200" height="200" class="hvr-float">
+<img src="./img/ticket.png" id="ticket" width="200" height="200" class="hvr-float" data-toggle="modal" data-target="#Booking">
+
+<!-- All the modals -->
+
+<!-- Booking Modal -->
+<div class="modal fade" id="Booking" role="dialog">
+	<div class="modal-dialog modal-lg">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<label class="modaltitle" for="mname"><h1>Ticket Booking</h1></label>
+			</div>
+			<div class="modal-body">
+				<!-- <img src="./img/now1.jpg" id="bookimg"> -->
+
+				<!-- <form action="a.php" method="post"> -->
+					<label class="mmname" for="mname">Movie name</label>
+					<select id="mname" class="mnames">
+						<option value="m1">A Bad Moms Christmas</option>
+						<option value="m2">Breathe</option>
+						<option value="m3">Daddy's home2</option>
+						<option value="m4">God's own country</option>
+						<option value="m5">Jigsaw</option>
+						<option value="m6">Lady macbeth</option>
+					</select><br>
+
+					<label class="mmtheater" for="tname">Theater</label>
+					<select id="tname" class="theaters">
+						<option value="t1">Helsinki</option>
+						<option value="t2">Turku</option>
+						<option value="t3">Tampere</option>
+						<option value="t4">Oulu</option>
+						<option value="t5">Rovaniemi</option>
+					</select><br>
+
+					<label class="mmdate" for="date">Date</label>
+					<select id="date" class="dates">
+						<option value="d1">18.12.17</option>
+						<option value="d2">19.12.17</option>
+						<option value="d3">20.12.17</option>
+						<option value="d4">21.12.17</option>
+						<option value="d5">22.12.17</option>
+					</select><br>
+
+					<label class="mmroom" for="room">Room</label>
+					<select id="room" class="rooms">
+						<option value="r1">Room1</option>
+						<option value="r2">Room2</option>
+						<option value="r3">Room3</option>
+					</select><br>
+
+					<label class="mmtime" for="time">Time</label>
+					<select id="time" class="times">
+						<option value="d1">07:40</option>
+						<option value="d2">10:10</option>
+						<option value="d3">12:35</option>
+						<option value="d4">15:00</option>
+						<option value="d5">17:30</option>
+						<option value="d6">20:10</option>
+					</select><br><br><br>
+
+					<h3>Ticket Type</h3><br>
+
+					<label class="mmregular" for="regular">Regular</label>
+					<select id="regular" class="regulars">
+						<option value="10">0</option>
+						<option value="11">1</option>
+						<option value="12">2</option>
+						<option value="13">3</option>
+						<option value="14">4</option>
+						<option value="15">5</option>
+					</select><br>
+
+					<label class="mmchild" for="child">Child</label>
+					<select id="child" class="childs">
+						<option value="20">0</option>
+						<option value="21">1</option>
+						<option value="22">2</option>
+						<option value="23">3</option>
+						<option value="24">4</option>
+						<option value="25">5</option>
+					</select><br>
+
+					<label class="mmwheelchair" for="wheelchair">Wheelchair</label>
+					<select id="wheelchair" class="wheelchairs">
+						<option value="30">0</option>
+						<option value="31">1</option>
+						<option value="32">2</option>
+						<option value="33">3</option>
+						<option value="34">4</option>
+						<option value="35">5</option>
+					</select><br>
+
+					<input type="submit" value="Payment" id="pay" class="bookNow" data-toggle="modal" data-target=".Payment">
 					<!-- </form> -->
 				</div>
 				<div class="modal-footer">
@@ -331,23 +596,25 @@
 
 	<!-- Modal -->
 	<div class="modal fade" id="myModal1" role="dialog">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">A bad moms in Christmas</h4>
+					<h1 class="modal-title">A bad moms in Christmas</h1>
 				</div>
 				<div class="modal-body">
-					<img src="./img/1-1.jpg" alt="Image" class="timetable">
+					<img src="./img/now1.jpg" class="infoImg" alt="Image">
 					<p>Director : Jon Lucas, Scott Moore</p>
 					<p>Actors : Mila Kunis, Kristen Bell, Kathryn Hahn</p>
 					<p>Show Time : 1h 44min </p>
 
 
-					<img src="./img/timetable.png" alt="Image" class="timetable"><br/>
 					<p>&nbsp;&nbsp;As their own mothers drop in unexpectedly, our three under-appreciated and over-burdened moms rebel against the challenges and expectations of the Super Bowl for mothers: Christmas.</p>
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time2.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -358,22 +625,26 @@
 	</div>
 
 	<div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Breathe</h4>
+					<h1 class="modal-title">Breathe</h1>
 				</div>
 				<div class="modal-body">
-					<img src="./img/now2.jpg" alt="Image" class="posters">
+					<img src="./img/now2.jpg" class="infoImg" alt="Image">
 					<p>Director :  Andy Serkis</p>
 					<p>Actors :  Andrew Garfield, Claire Foy, Hugh Bonneville</p>
 					<p>Show Time : 1h 58min </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
+
 					<p>&nbsp;&nbsp;The inspiring true love story of Robin and Diana Cavendish, an adventurous couple who refuse to give up in the face of a devastating disease. Their heartwarming celebration of human possibility marks the directorial debut of Andy Serkis.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time2.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -383,25 +654,28 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal3" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">daddy’s home2</h4>
+					<h1 class="modal-title">daddy’s home2</h1>
 
 				</div>
 				<div class="modal-body">
-					<img src="./img/now3.jpg" alt="Image" class="posters">
+					<img src="./img/now3.jpg" class="infoImg" alt="Image">
 					<p>Director : Sean Anders</p>
 					<p>Actors : Will Ferrell, Mark Wahlberg, Mel Gibson </p>
 					<p>Show Time : 1h 40min </p>
 
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
 					<p>&nbsp;&nbsp;Having finally gotten used to each other's existence, Brad and Dusty must now deal with their intrusive fathers during the holidays.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time3.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -411,25 +685,27 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal4" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">God's Own Country</h4>
+					<h1 class="modal-title">God's Own Country</h1>
 				</div>
 				<div class="modal-body">
 
-					<img src="./img/now4.jpg" alt="Image" class="posters">
+					<img src="./img/now4.jpg" class="infoImg" alt="Image">
 					<p>Director : Francis Lee</p>
 					<p>Actors : Josh O'Connor, Gemma Jones, Harry Lister Smith</p>
 					<p>Show Time : 1h 44min </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
-
 					<p>&nbsp;&nbsp;Spring. Yorkshire. Young farmer Johnny Saxby numbs his daily frustrations with binge drinking and casual sex, until the arrival of a Romanian migrant worker for lambing season ignites an intense relationship that sets Johnny on a new path.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time4.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -439,24 +715,27 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal5" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Jigsaw</h4>
+					<h1 class="modal-title">Jigsaw</h1>
 				</div>
 				<div class="modal-body">
-					<img src="./img/now5.jpg" alt="Image" class="posters">
+					<img src="./img/now5.jpg" class="infoImg" alt="Image">
 					<p>Director : Michael Spierig, Peter Spierig</p>
 					<p>Actors :  Matt Passmore, Tobin Bell, Callum Keith Rennie</p>
 					<p>Show Time : 1h 32min  </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
 
 					<p>&nbsp;&nbsp;Bodies are turning up around the city, each having met a uniquely gruesome demise. As the investigation proceeds, evidence points to one suspect: John Kramer, the man known as Jigsaw, who has been dead for ten years.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time5.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -466,29 +745,27 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
-	<!-- Modal -->
-=======
-
->>>>>>> 6df51f08f35748c1efc2f143b604f13a3687326b
-	<div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal6" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">lady macbeth</h4>
+					<h1 class="modal-title">lady macbeth</h1>
 				</div>
 				<div class="modal-body">
-					<img src="./img/now6.jpg" alt="Image" class="posters">
+					<img src="./img/now6.jpg" class="infoImg" alt="Image">
 					<p>Director : William Oldroyd</p>
 					<p>Actors : Florence Pugh, Cosmo Jarvis, Paul Hilton</p>
 					<p>Show Time : 1h 29min </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
 
 					<p>&nbsp;&nbsp;Rural England, 1865. Katherine (Florence Pugh) is stifled by her loveless marriage to a bitter man twice her age, whose family are cold and unforgiving. When she embarks on a passionate affair with a young worker on her husband's estate, a force is unleashed inside her, so powerful that she will stop at nothing to get what she wants.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time6.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -498,128 +775,28 @@
 		</div>
 	</div>
 
-	<!-- <div id="navi"> -->
-		<div class="hamburger">
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-		</div>
-		<div class="menu">
-			<div class="menu-item">Home</div>
-			<div class="menu-item">About</div>
-			<div class="menu-item">Contact</div>
-		</div>
-		<!-- </div> -->
-		<div id="wrapper">
-			<a href="#isShowing" aria-controls="isShowing" role="tab" data-toggle="tab" aria-expanded="false">
-				<div id="button">
-					<font size="32" color="white">Now Showing</font>
-				</div>
-			</a>
-			<a href="#isComing" aria-controls="isComing" role="tab" data-toggle="tab" aria-expanded="true">
-				<div id="button">
-					<font size="32" color="white">Coming Soon</font>
-				</div>
-			</a>
-			<div class="tab-content" id="tab">
-
-				<div role="tabpanel" class="tab-pane fade in active" id="isShowing" >
-					<div class="col-xs-12">                         
-						<div class="well" style="background-color: black;">
-							<div id="myCarousel" class="carousel slide" >
-
-								<!-- Carousel items -->
-								<div class="carousel-inner">
-									<div class="item active">
-										<div class="row">
-											<div class="col-xs-4 fix"><a href="#x">
-												<img src="./img/now1.jpg" alt="Image" class="img-responsive hvr-grow">
-												<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal1" id="bt1">Info</button>
-												<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal2" id="bt2">Buy Ticket</button>
-											</a>
-										</div>
-										<div class="col-xs-4 fix"><a href="#x"><img src="./img/now2.jpg" alt="Image" class="img-responsive hvr-grow">
-											<button class="btn btn-primary hover" id="bt1">Info</button>
-											<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-
-										</a>
-									</div>
-									<div class="col-xs-4 fix"><a href="#x"><img src="./img/now3.jpg" alt="Image" class="img-responsive hvr-grow">
-										<button class="btn btn-primary hover" id="bt1">Info</button>
-										<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-
-									</a>
-								</div>
-								<!-- <div class="col-xs-3 fix"><a href="#x"><img src="./img/now4.jpg" alt="Image" class="img-responsive hvr-grow">
-									<button class="btn btn-primary hover" id="bt1">Info</button>
-									<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-								</a>
-							</div> -->
-						</div>
-						<!--/row-->
-					</div>
-					<!--/item-->
-					<div class="item">
-						<div class="row">
-							<div class="col-xs-4 fix"><a href="#x"><img src="./img/now4.jpg" alt="Image" class="img-responsive hvr-grow">
-								<button class="btn btn-primary hover" id="bt1">Info</button>
-								<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-							</a>
-						</div>
-						<div class="col-xs-4 fix"><a href="#x"><img src="./img/now5.jpg" alt="Image" class="img-responsive hvr-grow">
-							<button class="btn btn-primary hover" id="bt1">Info</button>
-							<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-						</a>
-					</div>
-					<div class="col-xs-4 fix"><a href="#x"><img src="./img/now6.jpg" alt="Image" class="img-responsive hvr-grow">
-						<button class="btn btn-primary hover" id="bt1">Info</button>
-						<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-					</a>
-				</div>
-		<!-- 		<div class="col-xs-3 fix"><a href="#x"><img src="./img/now8.jpg" alt="Image" class="img-responsive hvr-grow">
-					<button class="btn btn-primary hover" id="bt1">Info</button>
-					<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-				</a>
-			</div> -->
-		</div>
-		<!--/row-->
-	</div>
-
-	<!--/item-->
-</div>
-<!--/carousel-inner--> 
-<a class="left carousel-control" href="#myCarousel" data-slide="prev" style="width:50px;">
-	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	<span class="sr-only">Previous</span></a>
-	<a class="right carousel-control" href="#myCarousel" data-slide="next" style="width:50px;">
-		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		<span class="sr-only">Next</span></a>
-	</div>
-	<!--/myCarousel-->
-</div>
-<!--/well-->
-</div>
-</div>
-
-<div class="modal fade" id="myModal1" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal7" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">American Assassin</h4>
+					<h1 class="modal-title">American Assassin</h1>
 				</div>
 				<div class="modal-body">
 
-					<img src="./img/co1.jpg" alt="Image" class="posters">
+					<img src="./img/co1.jpg" alt="Image" class="infoImg" >
 					<p>Director : Michael Cuesta</p>
 					<p>Actors :  Dylan O'Brien, Michael Keaton, Sanaa Lathan</p>
 					<p>Show Time : 1h 52min  </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
 
 					<p>&nbsp;&nbsp;After the death of his girlfriend at the hands of terrorists, Mitch Rapp is drawn into the world of counterterrorism, mentored by tough-as-nails former U.S. Navy S.E.A.L. Stan Hurley.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time7.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -629,25 +806,27 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal1" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal8" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Borg McEnroe</h4>
+					<h1 class="modal-title">Borg McEnroe</h1>
 				</div>
 				<div class="modal-body">
-					<img src="./img/co2.jpg" alt="Image" class="posters">
+					<img src="./img/co2.jpg" alt="Image" class="infoImg" >
 					<p>Director : Janus Metz</p>
 					<p>Actors : Sverrir Gudnason, Shia LaBeouf, Stellan Skarsgård </p>
 					<p>Show Time : 1h 47min </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
-
 
 					<p>&nbsp;&nbsp;The story of the 1980s tennis rivalry between the placid Björn Borg and the volatile John McEnroe.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time8.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -657,25 +836,28 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal1" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal9" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Star Wars: The Last Jedi (3D)</h4>
+					<h1 class="modal-title">Star Wars: The Last Jedi (3D)</h1>
 				</div>
 				<div class="modal-body">
 
-					<img src="./img/co3.jpg" alt="Image" class="posters">
+					<img src="./img/co3.jpg" alt="Image" class="infoImg" >
 					<p>Director : Rian Johnson</p>
 					<p>Actors : Daisy Ridley, John Boyega, Mark Hamill</p>
 					<p>Show Time : 2h 32min </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
 
 					<p>&nbsp;&nbsp;Having taken her first steps into the Jedi world, Rey joins Luke Skywalker on an adventure with Leia, Finn and Poe that unlocks mysteries of the Force and secrets of the past.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time9.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -685,25 +867,28 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal1" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal10" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Jumanji: Welcome to the Jungle</h4>
+					<h1 class="modal-title">Jumanji: Welcome to the Jungle</h1>
 				</div>
 				<div class="modal-body">
 
-					<img src="./img/co4.jpg" alt="Image" class="posters">
+					<img src="./img/co4.jpg" alt="Image" class="infoImg" >
 					<p>Director : Jake Kasdan</p>
 					<p>Actors : Dwayne Johnson, Karen Gillan, Kevin Hart</p>
 					<p>Show Time : 1h 59min </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
 
 					<p>&nbsp;&nbsp;Four teenagers discover an old video game console and are literally drawn into the game's jungle setting becoming the adult avatars they chose.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time10.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -713,25 +898,28 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal1" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal fade" id="myModal11" role="dialog">
+		<div class="modal-dialog modal-lg">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Suburbicon</h4>
+					<h1 class="modal-title">Suburbicon</h1>
 				</div>
 				<div class="modal-body">
 
-					<img src="./img/co5.jpg" alt="Image" class="posters">
+					<img src="./img/co5.jpg" alt="Image" class="infoImg" >
 					<p>Director : George Clooney</p>
 					<p>Actors : Matt Damon, Julianne Moore, Oscar Isaac</p>
 					<p>Show Time : 1h 45min </p>
 
-					<img src="./img/timetable.png" alt="Image" class="timetable">
 
 					<p>&nbsp;&nbsp;A home invasion rattles a quiet family town.</p>
+
+
+					<img src="./img/timetable.png" alt="Image" class="timetable"><br><br>
+					<img src="./img/time7.png" class="table">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -741,99 +929,14 @@
 		</div>
 	</div>
 
-	
-
-<div role="tabpanel" class="tab-pane fade in" id="isComing">
-	<div class="col-xs-12">                         
-		<div class="well" style="background-color: black;">
-			<div id="myCarouselb" class="carousel slide" >
-
-				<!-- Carousel items -->
-				<div class="carousel-inner">
-					<div class="item active">
-						<div class="row">
-							<div class="col-xs-4 fix"><a href="#x">
-								<img src="./img/co1.jpg" alt="Image" class="img-responsive hvr-grow">
-								<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal1" id="bt1">Info</button>
-								<button class="btn btn-primary hover" data-toggle="modal" data-target="#myModal2" id="bt2">Buy Ticket</button>
-							</a>
-						</div>
-						<div class="col-xs-4 fix"><a href="#x"><img src="./img/co2.jpg" alt="Image" class="img-responsive hvr-grow">
-							<button class="btn btn-primary hover" id="bt1">Info</button>
-							<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-
-						</a>
-					</div>
-					<div class="col-xs-4 fix"><a href="#x"><img src="./img/co3.jpg" alt="Image" class="img-responsive hvr-grow">
-						<button class="btn btn-primary hover" id="bt1">Info</button>
-						<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-
-					</a>
-				</div>
-				<!-- <div class="col-xs-3 fix"><a href="#x"><img src="./img/co4.jpg" alt="Image" class="img-responsive hvr-grow">
-					<button class="btn btn-primary hover" id="bt1">Info</button>
-					<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-				</a>
-			</div> -->
-		</div>
-		<!--/row-->
-	</div>
-	<!--/item-->
-	<div class="item">
-		<div class="row">
-			<div class="col-xs-4 fix"><a href="#x"><img src="./img/co4.jpg" alt="Image" class="img-responsive hvr-grow">
-				<button class="btn btn-primary hover" id="bt1">Info</button>
-				<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-			</a>
-		</div>
-		<div class="col-xs-4 fix"><a href="#x"><img src="./img/co5.jpg" alt="Image" class="img-responsive hvr-grow">
-			<button class="btn btn-primary hover" id="bt1">Info</button>
-			<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-		</a>
-	</div>
-	<div class="col-xs-4 fix"><a href="#x"><img src="./img/co6.jpg" alt="Image" class="img-responsive hvr-grow">
-		<button class="btn btn-primary hover" id="bt1">Info</button>
-		<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-	</a>
-</div>
-<!-- <div class="col-xs-3 fix"><a href="#x"><img src="./img/co8.jpg" alt="Image" class="img-responsive hvr-grow">
-	<button class="btn btn-primary hover" id="bt1">Info</button>
-	<button class="btn btn-primary hover" id="bt2">Buy Ticket</button>
-</a>
-</div> -->
-</div>
-<!--/row-->
-</div>
-
-<!--/item-->
-</div>
-<!--/carousel-inner--> 
-<a class="left carousel-control" href="#myCarouselb" data-slide="prev" style="width:50px;" >
-	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	<span class="sr-only">Previous</span></a>
-	<a class="right carousel-control" href="#myCarouselb" data-slide="next" style="width:50px;">
-		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		<span class="sr-only">Next</span></a>
-	</div>
-	<!--/myCarousel-->
-</div>
-<!--/well-->
-</div>
-</div>
-
-
-</div>
-</div>
-
-
-<img src="./img/movie.png" id="movie" width="200" height="200" class="hvr-float">
-<img src="./img/ticket.png" id="ticket" width="200" height="200" class="hvr-float" data-toggle="modal" data-target="#Booking">
 
 
 
 
 
-<script>
+
+
+	<script>
 
 	        // Get the modal
 	        var modal = document.getElementById('myModal');
