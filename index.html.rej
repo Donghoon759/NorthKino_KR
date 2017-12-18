@@ -1,0 +1,37 @@
+diff a/index.html b/index.html	(rejected hunks)
+@@ -741,6 +741,35 @@
+ 		</div>
+ 	</div>
+ 
++	<div class="modal fade" id="myModal1" role="dialog">
++		<div class="modal-dialog">
++
++			<!-- Modal content-->
++			<div class="modal-content">
++				<div class="modal-header">
++					<button type="button" class="close" data-dismiss="modal">&times;</button>
++					<h4 class="modal-title">Ballerina</h4>
++				</div>
++				<div class="modal-body">
++
++					<img src="./img/co6.jpg" alt="Image" class="posters">
++					<p>Director :  Eric Summer</p>
++					<p>Actors :  Elle Fanning, Dane DeHaan, Carly Rae Jepsen</p>
++					<p>Show Time :  1h 29min </p>
++
++					<img src="./img/timetable.png" alt="Image" class="timetable">
++
++					<p>&nbsp;&nbsp;An orphan girl dreams of becoming a ballerina and flees her rural Brittany for Paris, where she passes for someone else and accedes to the position of pupil at the Grand Opera house.</p>
++				</div>
++				<div class="modal-footer">
++					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
++				</div>
++			</div>
++
++		</div>
++	</div>
++
++
+ 	
+ 
+ <div role="tabpanel" class="tab-pane fade in" id="isComing">
